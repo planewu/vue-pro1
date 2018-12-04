@@ -1,6 +1,6 @@
 <template>
     <div>
-        欢迎来到菲菲弟弟系统
+        欢迎来到菲菲弟弟系统(test)
         <!-- <login-area></login-area> -->
         <footer-nav class="isIndex"></footer-nav>
     </div>
