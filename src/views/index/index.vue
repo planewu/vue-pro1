@@ -1,22 +1,37 @@
 <template>
     <div>
         欢迎来到菲菲弟弟系统(test)
-        <!-- <login-area></login-area> -->
+        <a href="#" @click="quit">注销登陆</a>
         <footer-nav class="isIndex"></footer-nav>
     </div>
 </template>
 <script>
 import FooterNav from '../../components/footer.vue'
-import LoginArea from '../../components/login.vue'
+import {setCookie ,getCookie ,delCookie} from '../../assets/js/cookie.js'
 export default {
     components:{
         FooterNav,
-        LoginArea
+    },
+    data(){
+        return {
+            name:''
+        }
+    },
+    mounted(){
+        let uname=getCookie('username')
+        this.name=uname
+
+        if(uname=="")
+        {
+            this.$router.push('/')
+        }
+    },
+    methods:{
+        quit(){
+            delCookie('username')
+        }
+            
     }
   
 }
-// if(document.getElementsByClassName("index-btn").click()||$(".manage-btn").click())
-// {
-    
-// }
 </script>
