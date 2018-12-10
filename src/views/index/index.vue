@@ -1,6 +1,6 @@
 <template>
     <div>
-        欢迎来到菲菲弟弟系统(test)
+        <p>欢迎来{{name}}到菲菲弟弟系统(test)</p>
         <a href="#" @click="quit">注销登陆</a>
         <footer-nav class="isIndex"></footer-nav>
     </div>
@@ -29,6 +29,7 @@ export default {
     methods:{
         quit(){
             delCookie('username')
+            this.$router.push('/')
         }
             
     }

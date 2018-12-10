@@ -18,6 +18,11 @@ export default new Router({
       component: Login
     },
     {
+      path: '/index',
+      name: 'Index',
+      component:Index
+    },
+    {
       path:'/manage',
       name:'Manage',
       component:Manage
@@ -26,11 +31,6 @@ export default new Router({
       path:'/main',
       name:'Main',
       component:Main
-    },
-    {
-      path:'/home',
-      name:'Home',
-      component:Home
     }
   ]
 })

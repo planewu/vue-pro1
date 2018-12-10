@@ -71,7 +71,7 @@ import {
 export default {
     mounted() {
         if (getCookie('username')) {
-            this.$router.push('/home')
+            this.$router.push('/index')
         }
     },
     data() {
@@ -86,18 +86,23 @@ export default {
             newPassword: ''
         }
     },
-    method: {
+    methods: {
         login() {
-            if (this.username == "" || this.password == "") {
-                alert("请输入账号密码")
+            if (this.username.trim() == "" || this.password.trim() == "") {
+                this.tips="hape请输入账号密码"
+                this.showTips=true
             } else {
-                this.tips = "登陆成功"
-                this.showTips = true
+                this.showTips=true
+                this.tips="登陆成功"
                 setCookie('username', this.username, 3600 * 24)
-                setTimeout(function () {
-                    this.$router.push('/index')
-                }.bind(this), 1000)
-            }
+                     this.$router.push('/')
+            }      
+        },
+        ToRegister(){
+            showLogin:false;
+            showRegister:true;
+            this.tips="请输入6-12位的账号密码";
+            this.showTips=true;
         }
     }
 }
